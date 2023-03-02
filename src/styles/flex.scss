@@ -1,0 +1,17 @@
+@each $name, $value in $positions {
+    .justify-#{$name} {
+        justify-content: $value;
+    }
+
+    .align-#{$name} {
+        align-items: $value;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
