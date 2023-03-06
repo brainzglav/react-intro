@@ -1,6 +1,8 @@
-import Header from "../../components/Header";
-import List from "../../components/List";
+import Header from "components/Header";
+import List from "components/List";
+import Input from "components/Input";
 import { useState } from "react";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 import "./style.scss";
 
@@ -12,11 +14,7 @@ const _firstResults = [
 
 function App() {
   const [firstResults, setFirstResults] = useState(_firstResults);
-  const secondResults = [
-    { name: "Ante", surname: "Antic", percentage: 10 },
-    { name: "Mate", surname: "Matic", percentage: 20 },
-    { name: "Antea", surname: "Antic", percentage: 50 },
-  ];
+
   const inputHandler = (event) => {
     const filter = event.target.value;
     const filteredResults = _firstResults.filter(({ name, surname }) => {
@@ -29,6 +27,12 @@ function App() {
     setFirstResults(filteredResults);
   };
 
+  const secondResults = [
+    { name: "Ante", surname: "Antic", percentage: 10 },
+    { name: "Mate", surname: "Matic", percentage: 20 },
+    { name: "Antea", surname: "Antic", percentage: 50 },
+  ];
+
   console.log("Render", firstResults);
 
   return (
@@ -36,7 +40,12 @@ function App() {
     <>
       <Header who="world" others="others" />
       <section className="main-container">
-        <input type="text" onChange={inputHandler} />
+        <Input
+          icon={faMagnifyingGlass}
+          type="text"
+          placeholder="Search..."
+          onChange={inputHandler}
+        />
         <span>Prvi kolokvij</span>
         <List data={firstResults} />
         {/* <span>Drugi kolokvij</span>
