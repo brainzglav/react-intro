@@ -3,10 +3,33 @@ import List from "components/List";
 import Input from "components/Input";
 import { useState } from "react";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBrain } from "@fortawesome/free-solid-svg-icons";
 
 import "./style.scss";
 
 const _firstResults = [
+  { name: "Ante", surname: "Antic", percentage: 80 },
+  { name: "Mate", surname: "Matic", percentage: 50 },
+  { name: "Antea", surname: "Antic", percentage: 100 },
+  { name: "Ante", surname: "Antic", percentage: 80 },
+  { name: "Mate", surname: "Matic", percentage: 50 },
+  { name: "Antea", surname: "Antic", percentage: 100 },
+  { name: "Ante", surname: "Antic", percentage: 80 },
+  { name: "Mate", surname: "Matic", percentage: 50 },
+  { name: "Antea", surname: "Antic", percentage: 100 },
+  { name: "Ante", surname: "Antic", percentage: 80 },
+  { name: "Mate", surname: "Matic", percentage: 50 },
+  { name: "Antea", surname: "Antic", percentage: 100 },
+  { name: "Ante", surname: "Antic", percentage: 80 },
+  { name: "Mate", surname: "Matic", percentage: 50 },
+  { name: "Antea", surname: "Antic", percentage: 100 },
+  { name: "Ante", surname: "Antic", percentage: 80 },
+  { name: "Mate", surname: "Matic", percentage: 50 },
+  { name: "Antea", surname: "Antic", percentage: 100 },
+  { name: "Ante", surname: "Antic", percentage: 80 },
+  { name: "Mate", surname: "Matic", percentage: 50 },
+  { name: "Antea", surname: "Antic", percentage: 100 },
   { name: "Ante", surname: "Antic", percentage: 80 },
   { name: "Mate", surname: "Matic", percentage: 50 },
   { name: "Antea", surname: "Antic", percentage: 100 },
@@ -38,16 +61,20 @@ function App() {
   return (
     // React fragment <> </>
     <>
-      <Header who="world" others="others" />
+      <Header>
+        <FontAwesomeIcon className="m-r-20" size="2x" icon={faBrain} />
+        <h1>Edit</h1>
+      </Header>
       <section className="main-container">
         <Input
+          className="m-b-20 m-t-10"
           icon={faMagnifyingGlass}
           type="text"
           placeholder="Search..."
           onChange={inputHandler}
         />
-        <span>Prvi kolokvij</span>
-        <List data={firstResults} />
+        
+        <List title="Prvi kolokvij" data={firstResults} />
         {/* <span>Drugi kolokvij</span>
         <List data={secondResults} /> */}
       </section>

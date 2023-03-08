@@ -18,10 +18,10 @@
         background-color: unset;
         border: unset;
         outline: none;
-        font-size: 20px;
+        font-size: 18px;
     }
 
-    &.focus {
+    &.focused {
         transform: scale(1.05);
     }
 

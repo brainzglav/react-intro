@@ -1,6 +1,8 @@
 import ListElement from "./ListElement";
 
-function List({ data }) {
+import "./style.scss";
+
+function List({ title, data }) {
   const elementList = data.map(({ name, surname, percentage }, index) => (
     <ListElement
       key={index}
@@ -10,7 +12,12 @@ function List({ data }) {
     />
   ));
 
-  return <ul>{elementList}</ul>;
+  return (
+    <>
+      <h2 className="m-b-20">{title}</h2>
+      <ul className="list">{elementList}</ul>
+    </>
+  );
 }
 
 export default List;

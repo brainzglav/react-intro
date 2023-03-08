@@ -1,12 +1,10 @@
+import { createClass } from "utils/generic.utils";
+
 import "./style.scss";
 
-function Header({ who, others }) {
+function Header({ className, children }) {
   return (
-    <header className="header">
-      <h1>
-        Hello {who} and {others}!
-      </h1>
-    </header>
+    <header className={createClass({}, "header", className)}>{children}</header>
   );
 }
 
