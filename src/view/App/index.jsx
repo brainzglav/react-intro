@@ -73,8 +73,8 @@ function App() {
           placeholder="Search..."
           onChange={inputHandler}
         />
-        
-        <List title="Prvi kolokvij" data={firstResults} />
+
+        <List title="Prvi kolokvij" data={firstResults}></List>
         {/* <span>Drugi kolokvij</span>
         <List data={secondResults} /> */}
       </section>
