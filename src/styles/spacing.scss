@@ -42,4 +42,36 @@
     .gap-#{$i * 5} {
         gap: $i * 5px;
     }
+
+    .w-#{$i * 20}px {
+        width: $i * 20px;
+    }
+
+    .h-#{$i * 20}px {
+        height: $i * 20px;
+    }
+
+    .w-#{$i * 5} {
+        width: $i * 5%;
+    }
+
+    .h-#{$i * 5} {
+        height: $i * 5%;
+    }
+}
+
+.m-l-auto {
+    margin-left: auto;
+}
+
+.m-r-auto {
+    margin-right: auto;
+}
+
+.m-t-auto {
+    margin-top: auto;
+}
+
+.m-b-auto {
+    margin-bottom: auto;
 }

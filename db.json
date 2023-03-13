@@ -1,148 +1,25 @@
 {
   "students": [
     {
+      "id": 0,
       "name": "Ante",
       "surname": "Antic",
       "percentage": 80,
       "birthDate": 760057200000
     },
     {
+      "id": 1,
       "name": "Mate",
       "surname": "Matic",
       "percentage": 50,
       "birthDate": 791852400000
     },
     {
+      "id": 2,
       "name": "Antea",
       "surname": "Antic",
       "percentage": 100,
       "birthDate": 824252400000
-    },
-    {
-      "name": "Ante",
-      "surname": "Antic",
-      "percentage": 80,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Mate",
-      "surname": "Matic",
-      "percentage": 50,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Antea",
-      "surname": "Antic",
-      "percentage": 100,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Ante",
-      "surname": "Antic",
-      "percentage": 80,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Mate",
-      "surname": "Matic",
-      "percentage": 50,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Antea",
-      "surname": "Antic",
-      "percentage": 100,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Ante",
-      "surname": "Antic",
-      "percentage": 80,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Mate",
-      "surname": "Matic",
-      "percentage": 50,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Antea",
-      "surname": "Antic",
-      "percentage": 100,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Ante",
-      "surname": "Antic",
-      "percentage": 80,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Mate",
-      "surname": "Matic",
-      "percentage": 50,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Antea",
-      "surname": "Antic",
-      "percentage": 100,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Ante",
-      "surname": "Antic",
-      "percentage": 80,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Mate",
-      "surname": "Matic",
-      "percentage": 50,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Antea",
-      "surname": "Antic",
-      "percentage": 100,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Ante",
-      "surname": "Antic",
-      "percentage": 80,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Mate",
-      "surname": "Matic",
-      "percentage": 50,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Antea",
-      "surname": "Antic",
-      "percentage": 100,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Ante",
-      "surname": "Antic",
-      "percentage": 80,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Mate",
-      "surname": "Matic",
-      "percentage": 50,
-      "birthDate": 760057200000
-    },
-    {
-      "name": "Antea",
-      "surname": "Antic",
-      "percentage": 100,
-      "birthDate": 760057200000
     }
   ]
 }
