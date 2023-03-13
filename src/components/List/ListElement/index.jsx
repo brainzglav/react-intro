@@ -1,11 +1,7 @@
 import "./style.scss";
 
-function ListElement({ name, surname, percentage }) {
-  return (
-    <li className="list-element">
-      {name} {surname} has {percentage}%
-    </li>
-  );
+function ListElement({ children }) {
+  return <li className="list-element">{children}</li>;
 }
 
 export default ListElement;

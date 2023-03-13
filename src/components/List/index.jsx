@@ -2,14 +2,9 @@ import ListElement from "./ListElement";
 
 import "./style.scss";
 
-function List({ title, data }) {
-  const elementList = data.map(({ name, surname, percentage }, index) => (
-    <ListElement
-      key={index}
-      name={name}
-      surname={surname}
-      percentage={percentage}
-    />
+function List({ title, data, renderData }) {
+  const elementList = data.map((item, index) => (
+    <ListElement key={index}>{renderData(item)}</ListElement>
   ));
 
   return (

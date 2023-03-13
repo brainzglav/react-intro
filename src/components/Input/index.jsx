@@ -4,7 +4,6 @@ import { createClass } from "utils/generic.utils";
 
 import "./style.scss";
 
-
 function Input({ icon, className, ...rest }) {
   const [isFocused, setIsFocused] = useState(false);
 

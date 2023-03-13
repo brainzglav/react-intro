@@ -38,4 +38,8 @@
     .p-b-#{$i * 5} {
         padding-bottom: $i * 5px;
     }
+
+    .gap-#{$i * 5} {
+        gap: $i * 5px;
+    }
 }
