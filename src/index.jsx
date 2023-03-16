@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import StudentList from "view/StudentList";
 import Edit from "view/Edit";
 import { faBrain } from "@fortawesome/free-solid-svg-icons";
@@ -18,8 +18,9 @@ root.render(
     </Header>
     <main className="main-container">
       <Routes>
-        <Route path="/" element={<StudentList />}></Route>
-        <Route path="/edit" element={<Edit />}></Route>
+        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/" element={<StudentList />} />
+        <Route path="/edit" element={<Edit />} />
       </Routes>
     </main>
   </BrowserRouter>

@@ -4,7 +4,7 @@ import { createClass } from "utils/generic.utils";
 
 import "./style.scss";
 
-function Input({ icon, className, ...rest }) {
+function Input({ icon = null, className = "", ...rest }) {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
@@ -16,6 +16,7 @@ function Input({ icon, className, ...rest }) {
       )}
       <input
         className="input-field__input"
+        autoComplete="off"
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         {...rest}

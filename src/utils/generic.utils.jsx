@@ -9,3 +9,10 @@ export function createClass(classObj, ...rest) {
 export function url(path) {
   return `${API_HOST}${path}`;
 }
+
+export function getValues(form) {
+  const formData = new FormData(form);
+
+  // @ts-ignore
+  return Object.fromEntries(formData);
+}

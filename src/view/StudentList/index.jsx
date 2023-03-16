@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Moment from "react-moment";
 import axios from "axios";
 import { url } from "utils/generic.utils";
+import { NavLink } from "react-router-dom";
 
 import "./style.scss";
 
@@ -14,7 +15,6 @@ function StudentList() {
   const inputHandler = (event) => {
     const filter = event.target.value;
 
-    //console.log("Handler", filteredResults);
     fetchStudents(filter);
   };
   const fetchStudents = async (filter = "") => {
@@ -50,6 +50,11 @@ function StudentList() {
         placeholder="Search..."
         onChange={inputHandler}
       />
+      <NavLink className="m-b-10" to="/edit">
+        <button className="button" type="button">
+          Add new student
+        </button>
+      </NavLink>
       <List
         title="Prvi kolokvij"
         data={students}
@@ -75,8 +80,6 @@ function StudentList() {
           </div>
         )}
       />
-      {/* <span>Drugi kolokvij</span>
-        <List data={secondResults} /> */}
     </>
   );
 }
