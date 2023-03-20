@@ -1,0 +1,21 @@
+@import "styles/variables.scss";
+
+.error-field.invalid .custom-datepicker {
+    border: 2px red solid;
+}
+
+.custom-datepicker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: $color-white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: $box-shadow-primary;
+
+    input {
+        width: 100%;
+        border: none;
+        outline: none;
+    }
+}

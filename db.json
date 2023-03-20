@@ -20,6 +20,13 @@
       "surname": "Antic",
       "percentage": 100,
       "birthDate": 824252400000
+    },
+    {
+      "name": "Marin",
+      "surname": "Zglav",
+      "percentage": "5",
+      "birthDate": 1679954400000,
+      "id": 3
     }
   ]
 }

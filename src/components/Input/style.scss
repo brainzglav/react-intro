@@ -1,5 +1,9 @@
 @import "styles/variables.scss";
 
+.error-field.invalid .input-field {
+    border: 2px red solid;
+}
+
 .input-field {
     display: flex;
     align-items: center;

@@ -1,0 +1,10 @@
+@import "styles/variables.scss";
+
+.error-field {
+    &__message {
+        height: 24px;
+        margin-top: 10px;
+        color: $color-danger;
+        font-weight: bold;
+    }
+}
