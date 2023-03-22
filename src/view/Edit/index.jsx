@@ -5,6 +5,8 @@ import CustomDatepicker from "components/CustomDatepicker";
 import ErrorField from "components/ErrorField";
 import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { StudentContext } from "context/student.context";
 
 const INITIAL_ERRORS = {
   name: null,
@@ -16,6 +18,7 @@ const INITIAL_ERRORS = {
 function Edit() {
   const [error, setError] = useState(INITIAL_ERRORS);
   const [birthDate, setBirthDate] = useState(null);
+  const { selectedStudent } = useContext(StudentContext);
   const navigate = useNavigate();
 
   const submitHandler = async (event) => {
@@ -30,10 +33,17 @@ function Edit() {
 
     if (isValid) {
       // CRUD interface - Create, Read, Update, Delete je jednostavan API koji sluzi za manipulaciju bazom podataka
-      const _res = await axios.post(url("/students"), {
-        ...data,
-        birthDate: new Date(data.birthDate).getTime(),
-      });
+      if (selectedStudent?.id) {
+        const _res = await axios.put(url(`/students/${selectedStudent.id}`), {
+          ...data,
+          birthDate: new Date(data.birthDate).getTime(),
+        });
+      } else {
+        const _res = await axios.post(url("/students"), {
+          ...data,
+          birthDate: new Date(data.birthDate).getTime(),
+        });
+      }
 
       navigate("/");
     }
@@ -79,18 +89,32 @@ function Edit() {
   return (
     <form className="flex flex-column" onSubmit={submitHandler}>
       <ErrorField error={error.name}>
-        <Input name="name" placeholder="Name" />
+        <Input
+          name="name"
+          placeholder="Name"
+          defaultValue={selectedStudent?.name}
+        />
       </ErrorField>
       <ErrorField error={error.surname}>
-        <Input name="surname" placeholder="Surname" />
+        <Input
+          name="surname"
+          placeholder="Surname"
+          defaultValue={selectedStudent?.surname}
+        />
       </ErrorField>
       <ErrorField error={error.percentage}>
-        <Input name="percentage" type="number" placeholder="Percentage" />
+        <Input
+          name="percentage"
+          type="number"
+          placeholder="Percentage"
+          defaultValue={selectedStudent?.percentage}
+        />
       </ErrorField>
       <ErrorField className="m-b-30" error={error.birthDate}>
         <CustomDatepicker
           name="birthDate"
           selected={birthDate}
+          defaultValue={selectedStudent?.birthDate}
           onChange={(date) => setBirthDate(date)}
         />
       </ErrorField>

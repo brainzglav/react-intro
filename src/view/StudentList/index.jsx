@@ -6,12 +6,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Moment from "react-moment";
 import axios from "axios";
 import { url } from "utils/generic.utils";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import "./style.scss";
+import { useContext } from "react";
+import { StudentContext } from "context/student.context";
 
 function StudentList() {
   const [students, setStudents] = useState([]);
+  const { setSelectedStudent } = useContext(StudentContext);
+  const navigate = useNavigate();
   const inputHandler = (event) => {
     const filter = event.target.value;
 
@@ -32,9 +36,14 @@ function StudentList() {
 
     fetchStudents();
   };
+  const editHandler = (student) => {
+    setSelectedStudent(student);
+    navigate("/edit");
+  };
 
   useEffect(() => {
     fetchStudents();
+    setSelectedStudent(null);
     console.log("Effect");
   }, []);
 
@@ -59,7 +68,12 @@ function StudentList() {
         title="Prvi kolokvij"
         data={students}
         renderData={({ id, name, surname, birthDate, percentage }) => (
-          <div className="flex align-center w-300px">
+          <div
+            className="flex align-center w-300px"
+            onClick={() =>
+              editHandler({ id, name, surname, birthDate, percentage })
+            }
+          >
             <div>
               <div className="flex gap-10 m-b-10">
                 <span>{name}</span>
@@ -75,7 +89,10 @@ function StudentList() {
               color="red"
               size="lg"
               icon={faXmark}
-              onClick={() => deleteStudent(id)}
+              onClick={(event) => {
+                event.stopPropagation();
+                deleteStudent(id);
+              }}
             />
           </div>
         )}

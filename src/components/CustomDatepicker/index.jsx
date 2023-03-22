@@ -6,11 +6,15 @@ import { createClass } from "utils/generic.utils";
 
 import "./style.scss";
 
-function CustomDatepicker({ className = "", ...rest }) {
+function CustomDatepicker({ className = "", defaultValue, onChange, ...rest }) {
+  if (defaultValue) {
+    onChange(defaultValue);
+  }
+
   return (
     <div className={createClass({}, "custom-datepicker", className)}>
       <FontAwesomeIcon size="lg" icon={faCalendarDays} />
-      <Datepicker {...rest} />
+      <Datepicker {...rest} selected={defaultValue} onChange={onChange} />
     </div>
   );
 }
